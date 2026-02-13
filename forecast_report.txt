@@ -1,0 +1,24 @@
+
+Sales Forecasting Report
+
+1. Forecasting Process:
+   - Data Loading: The 'train.csv' dataset was loaded from the KaggleHub directory.
+   - Date Conversion: 'Order Date' and 'Ship Date' columns were converted to datetime objects, interpreting dates in DD/MM/YYYY format.
+   - Data Aggregation: Sales data was aggregated monthly based on 'Order Date' using 'ME' (Month End) frequency to create `monthly_sales`.
+   - Train/Test Split: The `monthly_sales` data was split into training and testing sets, with approximately 80% for training (38 observations) and 20% for testing (10 observations) chronologically.
+
+2. Model Used:
+   - A Simple Exponential Smoothing (SES) model was used for forecasting.
+   - The model was instantiated and fitted using the training data, with an 'estimated' initialization method for automatic parameter estimation.
+
+3. Model Performance (on Test Data):
+   - Mean Absolute Error (MAE): 25012.19
+   - Mean Absolute Percentage Error (MAPE): 31.20%
+
+4. Key Findings:
+   - Sales Trend: The time series plot and rolling means generally indicate an upward trend in sales over the years.
+   - Seasonality: The 12-month rolling mean showed a smoother trend, suggesting a yearly seasonality pattern in the sales data, with peaks often observed towards the end of the year.
+
+5. Exported Deliverables:
+   - Forecasted sales data, including 'Date' and 'Forecasted Sales', has been exported to 'forecast_output.csv'.
+
